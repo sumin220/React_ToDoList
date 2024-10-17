@@ -41,11 +41,14 @@ export default class App extends Component {
                       <h1>할 일 목록</h1>
                   </div>
 
-                  <div style={this.getStyle()}>
-                      <input type="checkbox" defaultChecked={false}/>
-                      공부하기
-                      <button style={this.btnStyle}>x</button>
-                  </div>
+                  {this.todoData.map((data) => (
+                      <div style={this.getStyle()} key={data.id}>
+                          <input type="checkbox" defaultChecked={false}/>
+                          {data.title}
+                          <button style={this.btnStyle}>x</button>
+                      </div>
+                  ))}
+
               </div>
           </div>
 
